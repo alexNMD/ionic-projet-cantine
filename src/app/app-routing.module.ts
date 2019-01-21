@@ -15,17 +15,28 @@ const routes: Routes = [
     path: 'list',
     loadChildren: './list/list.module#ListPageModule'
   },
-  { 
+  {
     path: 'account-page',
     loadChildren: './account-page/account-page.module#AccountPagePageModule'
    },
-  { 
+  {
     path: 'panier-page',
     loadChildren: './panier-page/panier-page.module#PanierPagePageModule'
    },
-  { 
+  {
     path: 'historique-page',
     loadChildren: './historique-page/historique-page.module#HistoriquePagePageModule'
+  },
+  { path: ' ',
+    loadChildren: './add-page/add-page.module#AddPagePageModule'
+  },
+  {
+    path: 'plat-detail/:key',
+    loadChildren: './plat-detail/plat-detail.module#PlatDetailPageModule'
+  },
+  {
+    path: 'edit-page/:key',
+    loadChildren: './edit-page/edit-page.module#EditPagePageModule'
   }
 ];
 

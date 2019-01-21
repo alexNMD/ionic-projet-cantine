@@ -10,6 +10,11 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
+library.add(faEllipsisH);
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -17,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     BrowserModule,
     IonicModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [
     StatusBar,

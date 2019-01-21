@@ -29,6 +29,7 @@ export class PlatManagerService {
               catchError(this.handleError('getPlat', []))
           );
   }
+  //TODO : Faire fonctionner l'affichage d'un plat unique (dans une page séparée.
   // Récupération d'un plat depuis une 'key'
   getPlatByKey(key: string): Observable<Plat[]> {
         console.log('https://food-for-fun-bdd.firebaseio.com/food-for-fun-bdd/' + key + '.json');
@@ -38,6 +39,7 @@ export class PlatManagerService {
                 catchError(this.handleError('getPlatByKey', []))
             );
   }
+  //TODO : Vérifier que l'ajout d'un plat par formulaire fonctionne.
   // Ajout de plat depuis un formulaire
   addPlat(plat: Plat): Observable<Plat> {
       const url = 'https://food-for-fun-bdd.firebaseio.com/food-for-fun-bdd.json';
@@ -46,6 +48,7 @@ export class PlatManagerService {
           catchError(this.handleError<Plat>('addPlat')));
   }
 
+  //TODO : permettre la modification d'un plat déjà enregistré
   // Modification d'un plat depuis un formulaire
   editPlat(plat: Plat, key: string): Observable<Plat> {
       const url = `https://food-for-fun-bdd.firebaseio.com/food-for-fun-bdd/` + key + '.json';
@@ -55,6 +58,7 @@ export class PlatManagerService {
           catchError(this.handleError<Plat>('editPlat')));
   }
 
+  //TODO : permettre la suppresion d'un plat
   // Suppresion d'un plat depuis une 'key'
   deletePlat(key: string): Observable<Plat> {
         const url = 'https://food-for-fun-bdd.firebaseio.com/food-for-fun-bdd/' + key + '.json';
@@ -64,6 +68,8 @@ export class PlatManagerService {
                 catchError(this.handleError<Plat>('deletePlat'))
             );
   }
+
+
     /**
      * Handle Http operation that failed.
      * Let the app continue.

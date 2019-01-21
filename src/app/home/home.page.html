@@ -11,20 +11,28 @@
 
 <ion-content text-center>
   <h1>Menu du jour</h1>
-  <ion-list text-center>
-    <div *ngFor="let plat of platsDuJour">
-      <ion-item>
-          <ion-card>
-              <ion-card-header text-center>
-                {{plat.values.name}}
-              </ion-card-header>
-              <ion-card-content>
-                <p>{{plat.values.ingredients}}</p>
-                <p>{{plat.values.price}}</p>
-                <p>{{plat.values.temp}}</p>
-              </ion-card-content>
-            </ion-card>
-      </ion-item>
-    </div>
-  </ion-list>
+<ul style="list-style-type:none">
+    <li *ngFor="let plat of platsDuJour">
+        <ion-card  [routerLink]="['/plat-detail', plat.key]" routerDirection="forward">
+            <ion-img *ngIf="plat.values.image" src="{{ plat.values.image }}" [alt]="plat.values.image"></ion-img>
+            <ion-card-header>
+
+                <ion-card-title>{{ plat.values.name }}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                <p>{{ plat.values.type_dish }}</p>
+            </ion-card-content>
+        </ion-card>
+        <ion-button color="light" outline [routerLink]="['/edit-page', plat.key]" routerDirection="forward"> <!--<fa-icon [iconProp]="faEllipsisH"></fa-icon>--> modifier</ion-button>
+        <ion-button color="danger" outline (click)="deletePlat(plat.key)"> <!--<fa-icon [iconProp]="faEllipsisH"></fa-icon>--> supprimer</ion-button>
+    </li>
+</ul>
+
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button href="/add-page">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+
 </ion-content>

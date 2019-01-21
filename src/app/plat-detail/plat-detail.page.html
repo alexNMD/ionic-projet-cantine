@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>platDetail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <p>name : {{ plat?.name }}</p>
+    <p>price : {{ plat?.price }}</p>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item" *ngFor="let ingredient of plat?.ingredients">
+            {{ ingredient }}
+        </li>
+    </ul>
+
+</ion-content>
+<ion-footer>
+    <ion-item routerLink="/home">
+        <ion-icon name="arrow-dropleft"></ion-icon>
+    </ion-item>
+</ion-footer>

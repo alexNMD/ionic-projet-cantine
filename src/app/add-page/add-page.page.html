@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Ajouter un plat</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form #newPlat="ngForm" (ngSubmit)="addPlat(newPlat)">
+    <ion-item>
+      <ion-input required type="text" placeholder="Nom" name="name" ngModel></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input required type="number" placeholder="Prix" name="price" ngModel></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Type de plat</ion-label>
+      <ion-select ngModel name="type_dish">
+        <ion-select-option value="Entrée">Entrée</ion-select-option>
+        <ion-select-option value="Plat">Plat</ion-select-option>
+        <ion-select-option value="Dessert">Dessert</ion-select-option>
+        <ion-select-option value="Boissob">Boisson</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Température</ion-label>
+      <ion-select ngModel name="temp">
+        <ion-select-option value="Froid">Froid</ion-select-option>
+        <ion-select-option value="Chaud">Chaud</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-input required type="text" placeholder="Liste ingrédients" ngModel name="ingredients"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input required type="text" placeholder="Image" ngModel name="image"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input required type="date" placeholder="Date de disponibilité" ngModel name="date"></ion-input>
+    </ion-item>
+    <div text-center><ion-button ion-button round text-center type="submit">Enregistrer</ion-button></div>
+  </form>
+</ion-content>
+
+<ion-footer>
+  <ion-item routerLink="/home">
+    <ion-icon name="arrow-dropleft"></ion-icon>
+  </ion-item>
+</ion-footer>
